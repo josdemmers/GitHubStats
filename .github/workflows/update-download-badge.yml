@@ -61,9 +61,9 @@ jobs:
             with open('README.md', 'r') as file:
                 content = file.readlines()
             
-            badge_url_diablo4companion = f"https://img.shields.io/badge/Downloads%20(Total)-{total_downloads_diablo4companion}-blue"
-            badge_url_newworldcompanion = f"https://img.shields.io/badge/Downloads%20(Total)-{total_downloads_newworldcompanion}-blue"
-            badge_url_liveappsoverlay = f"https://img.shields.io/badge/Downloads%20(Total)-{total_downloads_liveappsoverlay}-blue"
+            badge_url_diablo4companion = f"https://img.shields.io/badge/Downloads%20(Total)-{total_downloads_diablo4companion}-blue?logo=github"
+            badge_url_newworldcompanion = f"https://img.shields.io/badge/Downloads%20(Total)-{total_downloads_newworldcompanion}-blue?logo=github"
+            badge_url_liveappsoverlay = f"https://img.shields.io/badge/Downloads%20(Total)-{total_downloads_liveappsoverlay}-blue?logo=github"
             new_badge_diablo4companion = f"![GitHub downloads Diablo4Companion]({badge_url_diablo4companion})"
             new_badge_newworldcompanion = f"![GitHub downloads NewWorldCompanion]({badge_url_newworldcompanion})"
             new_badge_liveappsoverlay = f"![GitHub downloads LiveAppsOverlay]({badge_url_liveappsoverlay})"
@@ -87,11 +87,26 @@ jobs:
             
             with open('README.md', 'w') as file:
                 file.writelines(content)
+                
+        def save_badge_svg(repo_name, total_downloads, filename):
+            badge_url = f"https://img.shields.io/badge/Downloads%20(Total)-{total_downloads}-blue?logo=github"
+            response = requests.get(badge_url)
+            if response.status_code == 200:
+                with open(filename, "wb") as f:
+                    f.write(response.content)
+                print(f"Saved badge for {repo_name} → {filename}")
+            else:
+                print(f"Failed to fetch badge for {repo_name}: {response.status_code}")                
 
         total_downloads_diablo4companion = get_total_downloads("Diablo4Companion")
         total_downloads_newworldcompanion = get_total_downloads("NewWorldCompanion")
         total_downloads_liveappsoverlay = get_total_downloads("LiveAppsOverlay")
+        
         update_readme(total_downloads_diablo4companion, total_downloads_newworldcompanion, total_downloads_liveappsoverlay)
+        save_badge_svg("Diablo4Companion", total_downloads_diablo4companion, "version_diablo4companion.svg")
+        save_badge_svg("NewWorldCompanion", total_downloads_newworldcompanion, "version_newworldcompanion.svg")
+        save_badge_svg("LiveAppsOverlay", total_downloads_liveappsoverlay, "version_liveappsoverlay.svg")
+        
         print(f"Total downloads (Diablo4Companion): {total_downloads_diablo4companion}")
         print(f"Total downloads (NewWorldCompanion): {total_downloads_newworldcompanion}")
         print(f"Total downloads (LiveAppsOverlay): {total_downloads_liveappsoverlay}")
@@ -101,7 +116,7 @@ jobs:
       run: |
         git config --global user.name 'github-actions[bot]'
         git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-        git add README.md
+        git add README.md version_diablo4companion.svg version_newworldcompanion.svg version_liveappsoverlay.svg
         if git diff --staged --quiet; then
           echo "No changes to commit"
         else
