@@ -30,12 +30,12 @@ jobs:
         import os
         import requests
 
-        def get_total_downloads():
+        def get_total_downloads(repo):
             total_downloads = 0
             page = 1
             
             while True:
-                url = f"https://api.github.com/repos/josdemmers/Diablo4Companion/releases?page={page}&per_page=100"
+                url = f"https://api.github.com/repos/josdemmers/{repo}/releases?page={page}&per_page=100"
                 headers = {"Authorization": f"token {os.environ['GITHUB_TOKEN']}"}
                 response = requests.get(url, headers=headers)
                 
@@ -57,12 +57,16 @@ jobs:
             
             return total_downloads
 
-        def update_readme(total_downloads):
+        def update_readme(total_downloads_diablo4companion, total_downloads_newworldcompanion, total_downloads_liveappsoverlay):
             with open('README.md', 'r') as file:
                 content = file.readlines()
             
-            badge_url = f"https://img.shields.io/badge/Downloads%20(Total)-{total_downloads}-blue"
-            new_badge = f"![GitHub downloads Diablo4Companion]({badge_url})"
+            badge_url_diablo4companion = f"https://img.shields.io/badge/Downloads%20(Total)-{total_downloads_diablo4companion}-blue"
+            badge_url_newworldcompanion = f"https://img.shields.io/badge/Downloads%20(Total)-{total_downloads_newworldcompanion}-blue"
+            badge_url_liveappsoverlay = f"https://img.shields.io/badge/Downloads%20(Total)-{total_downloads_liveappsoverlay}-blue"
+            new_badge_diablo4companion = f"![GitHub downloads Diablo4Companion]({badge_url_diablo4companion})"
+            new_badge_newworldcompanion = f"![GitHub downloads NewWorldCompanion]({badge_url_newworldcompanion})"
+            new_badge_liveappsoverlay = f"![GitHub downloads LiveAppsOverlay]({badge_url_liveappsoverlay})"
             
             # Find the position to insert or update the downloads badge
             downloads_badge_index_diablo4companion = next((i for i, line in enumerate(content) if '![GitHub downloads Diablo4Companion]' in line), -1)
@@ -71,14 +75,26 @@ jobs:
             
             if downloads_badge_index_diablo4companion != -1:
                 # Update existing downloads badge
-                content[downloads_badge_index_diablo4companion] = new_badge + '\n'
+                content[downloads_badge_index_diablo4companion] = new_badge_diablo4companion + '\n'
+                
+            if downloads_badge_index_newworldcompanion != -1:
+                # Update existing downloads badge
+                content[downloads_badge_index_newworldcompanion] = new_badge_newworldcompanion + '\n'
+
+            if downloads_badge_index_liveappsoverlay != -1:
+                # Update existing downloads badge
+                content[downloads_badge_index_liveappsoverlay] = new_badge_liveappsoverlay + '\n'                
             
             with open('README.md', 'w') as file:
                 file.writelines(content)
 
-        total_downloads = get_total_downloads()
-        update_readme(total_downloads)
-        print(f"Total downloads: {total_downloads}")
+        total_downloads_diablo4companion = get_total_downloads("Diablo4Companion")
+        total_downloads_newworldcompanion = get_total_downloads("NewWorldCompanion")
+        total_downloads_liveappsoverlay = get_total_downloads("LiveAppsOverlay")
+        update_readme(total_downloads_diablo4companion, total_downloads_newworldcompanion, total_downloads_liveappsoverlay)
+        print(f"Total downloads (Diablo4Companion): {total_downloads_diablo4companion}")
+        print(f"Total downloads (NewWorldCompanion): {total_downloads_newworldcompanion}")
+        print(f"Total downloads (LiveAppsOverlay): {total_downloads_liveappsoverlay}")
       shell: python
 
     - name: Commit and push if changed
