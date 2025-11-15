@@ -6,8 +6,8 @@
 
 ## NewWorld Companion
 
-![GitHub downloads NewWorldCompanion](https://img.shields.io/badge/Downloads%20(Total)-0-blue)
+![GitHub downloads NewWorldCompanion](https://img.shields.io/badge/Downloads%20(Total)-2986-blue)
 
 ## Live Apps Overlay
 
-![GitHub downloads LiveAppsOverlay](https://img.shields.io/badge/Downloads%20(Total)-0-blue)
+![GitHub downloads LiveAppsOverlay](https://img.shields.io/badge/Downloads%20(Total)-87-blue)
