@@ -2,7 +2,7 @@
 
 ## Diablo IV Companion
 
-![GitHub downloads Diablo4Companion](https://img.shields.io/badge/Downloads%20(Total)-24737-blue?logo=github)
+![GitHub downloads Diablo4Companion](https://img.shields.io/badge/Downloads%20(Total)-24739-blue?logo=github)
 
 ## NewWorld Companion
 
