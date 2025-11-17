@@ -10,4 +10,4 @@
 
 ## Live Apps Overlay
 
-![GitHub downloads LiveAppsOverlay](https://img.shields.io/badge/Downloads%20(Total)-87-blue?logo=github)
+![GitHub downloads LiveAppsOverlay](https://img.shields.io/badge/Downloads%20(Total)-89-blue?logo=github)
