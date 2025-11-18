@@ -2,7 +2,7 @@
 
 ## Diablo IV Companion
 
-![GitHub downloads Diablo4Companion](https://img.shields.io/badge/Downloads%20(Total)-24739-blue?logo=github)
+![GitHub downloads Diablo4Companion](https://img.shields.io/badge/Downloads%20(Total)-24742-blue?logo=github)
 
 ## NewWorld Companion
 
@@ -10,4 +10,4 @@
 
 ## Live Apps Overlay
 
-![GitHub downloads LiveAppsOverlay](https://img.shields.io/badge/Downloads%20(Total)-89-blue?logo=github)
+![GitHub downloads LiveAppsOverlay](https://img.shields.io/badge/Downloads%20(Total)-90-blue?logo=github)
