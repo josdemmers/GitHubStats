@@ -2,12 +2,12 @@
 
 ## Diablo IV Companion
 
-[![GitHub downloads Diablo4Companion](https://img.shields.io/badge/Downloads%20(Total)-28743-blue?logo=github)](https://github.com/josdemmers/Diablo4Companion/releases)
+[![GitHub downloads Diablo4Companion](https://img.shields.io/badge/Downloads%20(Total)-28779-blue?logo=github)](https://github.com/josdemmers/Diablo4Companion/releases)
 
 ## Live Apps Overlay
 
-[![GitHub downloads LiveAppsOverlay](https://img.shields.io/badge/Downloads%20(Total)-208-blue?logo=github)](https://github.com/josdemmers/LiveAppsOverlay/releases)
+[![GitHub downloads LiveAppsOverlay](https://img.shields.io/badge/Downloads%20(Total)-209-blue?logo=github)](https://github.com/josdemmers/LiveAppsOverlay/releases)
 
 ## NewWorld Companion
 
-[![GitHub downloads NewWorldCompanion](https://img.shields.io/badge/Downloads%20(Total)-2996-blue?logo=github)](https://github.com/josdemmers/NewWorldCompanion/releases)
+[![GitHub downloads NewWorldCompanion](https://img.shields.io/badge/Downloads%20(Total)-2997-blue?logo=github)](https://github.com/josdemmers/NewWorldCompanion/releases)
