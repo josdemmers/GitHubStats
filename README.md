@@ -10,4 +10,4 @@
 
 ## NewWorld Companion
 
-[![GitHub downloads NewWorldCompanion](https://img.shields.io/badge/Downloads%20(Total)-3007-blue?logo=github)](https://github.com/josdemmers/NewWorldCompanion/releases)
+[![GitHub downloads NewWorldCompanion](https://img.shields.io/badge/Downloads%20(Total)-3008-blue?logo=github)](https://github.com/josdemmers/NewWorldCompanion/releases)
