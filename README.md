@@ -2,7 +2,7 @@
 
 ## Diablo IV Companion
 
-[![GitHub downloads Diablo4Companion](https://img.shields.io/badge/Downloads%20(Total)-31867-blue?logo=github)](https://github.com/josdemmers/Diablo4Companion/releases)
+[![GitHub downloads Diablo4Companion](https://img.shields.io/badge/Downloads%20(Total)-31876-blue?logo=github)](https://github.com/josdemmers/Diablo4Companion/releases)
 
 ## Live Apps Overlay
 
